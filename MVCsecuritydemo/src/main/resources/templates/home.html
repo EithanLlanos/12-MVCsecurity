@@ -20,18 +20,20 @@
     Roles: <span sec:authentication="principal.authorities"></span>
 </p>
 
-<!-- Add a link to point to /leaders ... for the managers -->
-<p>
-    <a href="/leaders">Leadership meeting</a>
-    (Only for manager peeps)
-</p>
-
-<!-- Add a link to point to /systems ... for the admins -->
-<p>
-    <a href="/systems">IT Systems Meeting</a>
-    (Only for manager peeps)
-</p>
-
+<div sec:authorize="hasRole('MANAGER')">
+    <!-- Add a link to point to /leaders ... for the managers -->
+    <p>
+        <a href="/leaders">Leadership meeting</a>
+        (Only for manager peeps)
+    </p>
+</div>
+<div sec:authorize="hasRole('ADMIN')">
+    <!-- Add a link to point to /systems ... for the admins -->
+    <p>
+        <a href="/systems">IT Systems Meeting</a>
+        (Only for manager peeps)
+    </p>
+</div>
 <form action="#" method="POST" th:action="@{/logout}">
     <input type="submit" value="Logout">
 </form>
