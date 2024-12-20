@@ -22,4 +22,11 @@ public class DemoController {
     public String showSystems() {
         return "systems";
     }
+
+    // Add a request mapping for /access-denied
+    @GetMapping("/access-denied")
+    public String showAccessDenied() {
+        return "access-denied";
+    }
+
 }
