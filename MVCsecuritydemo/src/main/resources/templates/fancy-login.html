@@ -61,17 +61,33 @@
             </div>
             <div class="card-body">
                 <form action="#" method="post" th:action="@{/authenticateTheUser}">
-                    <!-- Error message -->
+
+                    <!--                     Error and Logout message -->
+                    <!--                    <div class="form-group" th:if="${param.error != null or param.logout != null}">-->
+
+                    <!--                        <div class="alert alert-danger"-->
+                    <!--                             th:text="${param.error !=null ? 'Invalid username or password':(param.logout !=null ? 'You have been logged out': '')}">-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+
+                    <!-- Error-->
                     <div class="form-group" th:if="${param.error}">
                         <div class="alert alert-danger">
                             Invalid username or password
                         </div>
                     </div>
+                    <div class="form-group" th:if="${param.logout}">
+                        <div class="alert alert-success col-xs-offset-1 col-xs-10">
+                            You have been logged out
+                        </div>
+                    </div>
+
                     <!-- Username -->
                     <div class="form-group mb-3">
                         <input class="form-control" name="username" placeholder="Username" required type="text">
                     </div>
                     <!-- Password -->
+
                     <div class="form-group mb-3">
                         <input class="form-control" name="password" placeholder="Password" required type="password">
                     </div>

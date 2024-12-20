@@ -1,6 +1,6 @@
 <!doctype html>
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--<html lang="en">-->
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
@@ -10,7 +10,10 @@
 
 <h2>Spring Company Home Page</h2>
 <hr>
-Welcome to the Spring company home page
+<p>Welcome to the Spring company home page</p>
 
+<form action="#" method="POST" th:action="@{/logout}">
+    <input type="submit" value="Logout">
+</form>
 </body>
 </html>
