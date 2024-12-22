@@ -9,7 +9,7 @@ DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
   `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
+  `password` varchar(68) NOT NULL,
   `enabled` tinyint NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -20,9 +20,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` 
 VALUES 
-('john','{noop}test123',1),
-('mary','{noop}test123',1),
-('susan','{noop}test123',1);
+('john','{bcrypt}$2a$10$ktcO.eUGLbg6AsMbqJ66MOOBlwWs4CtkIx91I8v8fqzpQSeyKr6PG',1),
+('mary','{bcrypt}$2a$10$qilulOrQ/E4mKUEDfMBG5exuh/b0IuOcYs0Rw.MvnP0QKgaz8A/T2',1),
+('susan','{bcrypt}$2a$10$qJpwW9qa6fTylLpkDpomZubvj6cm/LdXt0cpDvA1qKMM05.2q8BLq',1);
 
 
 --
